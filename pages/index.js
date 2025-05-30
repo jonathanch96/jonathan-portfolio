@@ -1,118 +1,627 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useState } from "react";
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  MapPin, 
+  Code, 
+  Database, 
+  Server, 
+  Globe, 
+  Award,
+  Calendar,
+  ExternalLink,
+  ChevronRight,
+  User,
+  Briefcase,
+  FolderOpen,
+  Phone,
+  Star,
+  Zap,
+  Building,
+  GraduationCap
+} from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const skills = {
+    backend: ['Ruby on Rails', 'Laravel', 'Go (Golang)', 'Node.js', 'Express.js'],
+    frontend: ['React.js', 'Next.js', 'Polymer.js', 'Lit Element', 'Vue.js', 'Nuxt.js', 'TypeScript'],
+    database: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server', 'Firebase', 'Oracle', 'MariaDB', 'Redis'],
+    devops: ['Docker', 'Kubernetes', 'Nginx', 'CI/CD', 'GitHub Actions', 'Jenkins', 'AWS', 'Datadog', 'ELK Stack'],
+    tools: ['Git', 'Portainer', 'Twilio', 'PayPal API', 'Midtrans', 'Jasper Reports', 'GTM', 'Power Builder', 'Horizon', 'VIDA']
+  };
+
+  const skillIcons = {
+    backend: Server,
+    frontend: Globe,
+    database: Database,
+    devops: Code,
+    tools: Code
+  };
+
+  const experiences = [
+    {
+      company: "Hyperscal, PT SOD TECHNOLOGY INDONESIA",
+      position: "Software Engineer",
+      period: "August 2024 - Present",
+      location: "Jakarta, Indonesia",
+      description: "Software Engineer responsible for gathering user requirements from Philippines telco clients and providing technical solutions. Currently working on warehouse management system and upcoming BSS/billing system for Philippines telco company.",
+      tech: ["Laravel", "MariaDB", "Oracle", "Docker", "Go", "React", "Power Builder", "Horizon", "Redis"],
+      achievements: [
+        "Gathering user requirements from Philippines telco clients and providing technical solutions",
+        "Successfully migrated millions of records from MySQL and Oracle with zero data loss",
+        "Currently developing Inventory Management System for warehouse partners (ongoing)",
+        "Leading development of new BSS/billing system end-to-end for Philippines telco company (upcoming)",
+        "Enhanced warehouse fulfillment efficiency and traceability"
+      ]
+    },
+    {
+      company: "ALODOKTER, PT ALODOKTER TEKNOLOGI SOLUSI",
+      position: "Fullstack Developer",
+      period: "April 2022 - July 2024",
+      location: "Jakarta, Indonesia",
+      description: "Led a team of 3 developers to build online pharmacy platform and insurance management dashboard. Optimized cart routing logic achieving 40-50% performance improvement.",
+      tech: ["Ruby on Rails", "Polymer JS", "Kubernetes", "Datadog", "Elastic Search", "MongoDB", "VIDA"],
+      achievements: [
+        "Led team of 3 developers in building complete online pharmacy platform",
+        "Achieved 40-50% performance improvement in cart routing logic",
+        "Built order tracking system for partner pharmacies to manage order lifecycle",
+        "Developed insurance dashboard for admin management with employee registration and claims",
+        "Integrated VIDA face detection for registration validation on frontend",
+        "Built real-time order management dashboard for pharmacy partners"
+      ]
+    },
+    {
+      company: "PT GRAHA CITRA PRATAMA",
+      position: "Fullstack Developer", 
+      period: "March 2018 - April 2022",
+      location: "Jakarta, Indonesia",
+      description: "Developed HRIS/Payroll system with fingerprint integration, implemented Microsoft Dynamics NAV, and created Credit Memo Approval system with Accurate Online API integration.",
+      tech: ["PHP", "Laravel", "Java", "MySQL", "SQL Server", "Microsoft Dynamics NAV"],
+      achievements: [
+        "Built comprehensive HRIS/Payroll system with fingerprint integration",
+        "Implemented Microsoft Dynamics NAV for accounting department",
+        "Created Credit Memo Approval system with Accurate Online API",
+        "Generated automated PPH21 CSV forms and performance reports",
+        "Installed manual conversion tracking on Google Ads using Google Tag Manager"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "CaterFood - Catering CRM Platform",
+      description: "CRM system for catering companies to manage customers, orders, and daily meal adjustments. Handled complete DevOps implementation including deployment and CI/CD pipeline.",
+      tech: ["Laravel", "React.js", "Jenkins", "Docker", "CI/CD", "Domain Management"],
+      features: ["Customer management", "Daily meal adjustments", "Order tracking", "Analytics dashboard", "Jenkins CI/CD", "Domain setup"],
+      url: "https://caterfood.startner.id",
+      type: "CRM Platform",
+      role: "DevOps & Backend"
+    },
+    {
+      title: "Startner.id - Digital Marketing Platform",
+      description: "Full-stack e-commerce platform for digital marketing products with payment gateway integration and comprehensive admin panel.",
+      tech: ["Laravel", "React.js", "Next.js", "Go", "MySQL", "Docker", "Nginx", "CI/CD"],
+      features: ["E-commerce functionality", "Payment gateway (Midtrans)", "Partner dashboard", "Unit testing", "CI/CD pipeline"],
+      url: "https://startner.id",
+      type: "E-commerce"
+    },
+    {
+      title: "Alodokter Online Pharmacy",
+      description: "Led development of complete online pharmacy platform with real-time order management and partner tracking system.",
+      tech: ["Ruby on Rails", "Polymer JS", "Kubernetes", "MongoDB"],
+      features: ["E-commerce platform", "Real-time notifications", "Order tracking for partners", "Inventory management"],
+      url: "https://alodokter.com/aloshop",
+      type: "Healthcare Platform"
+    },
+    {
+      title: "Insurance Management Dashboard",
+      description: "Admin dashboard for insurance company partners to manage employees, registrations, and claims with face detection validation.",
+      tech: ["Ruby on Rails", "Polymer JS", "VIDA", "Face Detection"],
+      features: ["Employee registration with face detection", "Claims management", "User deactivation", "Document validation"],
+      type: "Insurance Platform",
+      role: "Frontend & Integration"
+    },
+    {
+      title: "BDA Group - Company Profile",
+      description: "Multi-page company website with AWS infrastructure setup and automated deployment pipeline.",
+      tech: ["Laravel", "React", "MySQL", "AWS S3", "CloudFront", "EC2", "CI/CD"],
+      features: ["Company catalog", "AWS infrastructure", "Automated deployment", "Content management"],
+      url: "https://bdagroup.co.id",
+      type: "Company Website"
+    },
+    {
+      title: "Snuffle - Dog Walking Platform",
+      description: "Enhanced dog walking platform with real-time features and payment integration.",
+      tech: ["Laravel", "PHP", "WebSockets", "PayPal API"],
+      features: ["Voucher management", "Real-time location tracking", "PayPal integration", "Mobile-first design"],
+      url: "https://snuffle.app",
+      type: "Mobile Platform"
+    }
+  ];
+
+  const currentProjects = [
+    {
+      title: "Learning Management System",
+      description: "School management system for student registration, curriculum management, classroom organization, and administrative tasks.",
+      tech: ["Laravel", "React", "MySQL"],
+      features: ["Student registration", "Curriculum management", "Classroom organization", "Building management", "Transportation", "Payroll system"],
+      status: "In Progress",
+      role: "Backend Development"
+    },
+    {
+      title: "Trip Manager Expense (Concept)",
+      description: "Expense management system for group trips with AI integration and social media connectivity to improve user experience.",
+      tech: ["Laravel", "React", "LLM Integration", "Social Media APIs"],
+      features: ["Expense tracking", "Bill splitting", "LLM integration", "Social media connectivity", "Trip collaboration"],
+      status: "Planning Phase",
+      role: "Full-Stack Development"
+    }
+  ];
+
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 ${inter.className}`}>
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="text-2xl font-bold text-slate-800 dark:text-white">
+              Jonathan Chang
+            </div>
+            <div className="hidden md:flex space-x-8">
+              {[
+                { id: 'home', label: 'Home', icon: User },
+                { id: 'about', label: 'About', icon: User },
+                { id: 'experience', label: 'Experience', icon: Briefcase },
+                { id: 'projects', label: 'Projects', icon: FolderOpen },
+                { id: 'contact', label: 'Contact', icon: Phone }
+              ].map((section) => {
+                const Icon = section.icon;
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className={`flex items-center gap-2 transition-colors ${
+                      activeSection === section.id 
+                        ? 'text-blue-600 dark:text-blue-400' 
+                        : 'text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    <Icon size={16} />
+                    {section.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
-      </div>
+      </nav>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Hero Section */}
+      <section id="home" className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="mb-8">
+              <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
+                JC
+              </div>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-6">
+              Jonathan Chang
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8">
+              Software Engineer & Full-Stack Developer
+            </p>
+            <p className="text-lg text-slate-500 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
+              Experienced Software Engineer with 6+ years of expertise in backend (Golang, Ruby on Rails, Laravel) 
+              and frontend (React, Next.js) technologies. Specialized in building scalable applications 
+              with modern DevOps practices and client requirement analysis.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <MapPin size={18} />
+                <span>Jakarta, Indonesia</span>
+              </div>
+              <a 
+                href="mailto:jonathanchang96@gmail.com"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <Mail size={18} />
+                <span>jonathanchang96@gmail.com</span>
+              </a>
+              <a 
+                href="https://github.com/jonathanch96" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <Github size={18} />
+                <span>GitHub</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/jonathan-chang-25901910b/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <Linkedin size={18} />
+                <span>LinkedIn</span>
+              </a>
+              <a 
+                href="https://www.upwork.com/freelancers/~01661e7ba037134fe4?mp_source=share" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <Star size={18} />
+                <span>Upwork</span>
+              </a>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
+              >
+                <FolderOpen size={18} />
+                View My Work
+                <ChevronRight size={16} />
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+              >
+                <Mail size={18} />
+                Get In Touch
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-slate-800 dark:text-white mb-16">
+            About Me
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                With over 6 years of experience in software engineering and full-stack development, I specialize in building 
+                scalable web applications across healthcare, finance, logistics, and telecommunications industries. 
+                I have a proven track record of leading development teams, gathering user requirements, and delivering complex projects 
+                from conception to production.
+              </p>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                Currently working as a Software Engineer at Hyperscal, gathering requirements from Philippines telco clients 
+                and providing technical solutions. I'm also exploring opportunities in the Blockchain industry to apply my skills 
+                in emerging technologies while continuing to grow my expertise in modern development practices.
+              </p>
+              
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <GraduationCap className="text-blue-600 dark:text-blue-400" size={20} />
+                  <h3 className="text-xl font-semibold text-slate-800 dark:text-white">Education</h3>
+                </div>
+                <div className="bg-slate-50 dark:bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-medium text-slate-800 dark:text-white">Bachelor of Computer Science</h4>
+                  <p className="text-slate-600 dark:text-slate-300">Universitas Bina Nusantara (2014-2018)</p>
+                  <p className="text-slate-600 dark:text-slate-300">GPA: 3.43</p>
+                </div>
+              </div>
+              
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Award className="text-blue-600 dark:text-blue-400" size={20} />
+                  <h3 className="text-xl font-semibold text-slate-800 dark:text-white">Certifications</h3>
+                </div>
+                <ul className="space-y-2">
+                  {[
+                    "Certified Ethical Hacker",
+                    "Tokopedia Tech Workshop - Build Scalable APIs with gRPC",
+                    "The Complete Guide to Becoming a Software Architect",
+                    "Google Tag Manager (GTM) Training Course"
+                  ].map((cert, index) => (
+                    <li key={index} className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+                      <ChevronRight size={16} className="text-blue-600 dark:text-blue-400" />
+                      {cert}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-6">Technical Skills</h3>
+              <div className="space-y-6">
+                {Object.entries(skills).map(([category, skillList]) => {
+                  const Icon = skillIcons[category] || Code;
+                  return (
+                    <div key={category}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <Icon size={20} className="text-blue-600 dark:text-blue-400" />
+                        <h4 className="text-lg font-medium text-slate-700 dark:text-slate-200 capitalize">
+                          {category === 'devops' ? 'DevOps & Infrastructure' : category}
+                        </h4>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {skillList.map((skill) => (
+                          <span
+                            key={skill}
+                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-800 dark:text-white mb-4">
+              Professional Experience
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              Over 6 years of building scalable applications across multiple industries
+            </p>
+          </div>
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div key={index} className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">{exp.position}</h3>
+                    <h4 className="text-xl text-blue-600 dark:text-blue-400 font-medium mb-2">{exp.company}</h4>
+                    <div className="flex items-center gap-4 text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <MapPin size={16} />
+                        <span>{exp.location}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar size={16} />
+                        <span>{exp.period}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-slate-600 dark:text-slate-300 mb-6">{exp.description}</p>
+                
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">Key Achievements</h5>
+                  <ul className="space-y-2">
+                    {exp.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-slate-600 dark:text-slate-300">
+                        <ChevronRight size={16} className="text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">Technologies Used</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-800 dark:text-white mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              A showcase of applications I've built across different industries
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-slate-50 dark:bg-slate-700 rounded-lg p-8 hover:shadow-lg transition-all hover:-translate-y-1">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm mb-2">
+                      {project.type}
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-800 dark:text-white">{project.title}</h3>
+                    {project.role && (
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Role: {project.role}</p>
+                    )}
+                  </div>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
+                </div>
+                
+                <p className="text-slate-600 dark:text-slate-300 mb-6">{project.description}</p>
+                
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Key Features</h4>
+                  <ul className="space-y-1">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+                        <ChevronRight size={14} className="text-blue-600 dark:text-blue-400" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          {/* Current Projects Section */}
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-8">
+              <Zap className="text-yellow-600 dark:text-yellow-400" size={24} />
+              <h3 className="text-3xl font-bold text-slate-800 dark:text-white">Current Projects</h3>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-8">
+              {currentProjects.map((project, index) => (
+                <div key={index} className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-slate-700 dark:to-slate-600 rounded-lg p-8 border-l-4 border-yellow-500">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                          project.status === 'In Progress' 
+                            ? 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+                            : 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+                        }`}>
+                          {project.status}
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-800 dark:text-white">{project.title}</h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Role: {project.role}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-600 dark:text-slate-300 mb-6">{project.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Key Features</h4>
+                    <ul className="space-y-1">
+                      {project.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+                          <ChevronRight size={14} className="text-yellow-600 dark:text-yellow-400" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-slate-800 dark:text-white mb-8">
+            Let's Connect
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+            I'm always interested in discussing new opportunities, especially in the Blockchain industry. 
+            Let's talk about how we can work together!
           </p>
-        </a>
-      </div>
-    </main>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <a
+              href="mailto:jonathanchang96@gmail.com"
+              className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors shadow-lg"
+            >
+              <Mail size={20} />
+              <span>Email Me</span>
+            </a>
+            <a
+              href="https://github.com/jonathanch96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-lg hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors shadow-lg"
+            >
+              <Github size={20} />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jonathan-chang-25901910b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              <Linkedin size={20} />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~01661e7ba037134fe4?mp_source=share"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors shadow-lg"
+            >
+              <Star size={20} />
+              <span>Upwork</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-800 dark:bg-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-slate-300">
+            © 2024 Jonathan Chang. Built with Next.js and Tailwind CSS.
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }

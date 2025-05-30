@@ -1,40 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Jonathan Chang - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website showcasing my experience as a Full-Stack Developer with expertise in backend and frontend technologies.
 
-First, run the development server:
+## About Me
+
+Experienced Full-Stack Developer with 6+ years of expertise in building scalable web applications across healthcare, finance, and logistics industries. Currently exploring opportunities in the Blockchain industry.
+
+**Location:** Jakarta, Indonesia  
+**GitHub:** [jonathanch96](https://github.com/jonathanch96)  
+**LinkedIn:** [Jonathan Chang](https://www.linkedin.com/in/jonathan-chang-25901910b/)
+
+## Tech Stack
+
+### Backend
+- Ruby on Rails
+- Laravel (PHP)
+- Go (Golang)
+- Node.js & Express.js
+
+### Frontend
+- React.js & Next.js
+- Polymer.js & Lit Element
+- Vue.js & Nuxt.js
+- TypeScript
+
+### Database
+- MySQL, PostgreSQL
+- MongoDB, SQL Server
+- Firebase, Oracle, MariaDB
+
+### DevOps & Infrastructure
+- Docker & Kubernetes
+- AWS (S3, CloudFront, EC2)
+- CI/CD (GitHub Actions)
+- Nginx, Datadog, ELK Stack
+
+## Featured Projects
+
+### 🚀 Startner.id - Digital Marketing Platform
+Full-stack e-commerce platform for digital marketing products with comprehensive admin panel and CI/CD pipeline.
+
+### 🏥 Online Pharmacy (Alodokter)
+Led development of complete pharmacy platform with real-time order management and face detection validation. Achieved 40-50% performance improvement in cart routing logic.
+
+### 🏢 BDA Group - Company Profile
+Multi-page company website with AWS infrastructure setup and automated deployment pipeline.
+
+### 🐕 Snuffle - Dog Walking Platform
+Enhanced platform with real-time location tracking via WebSockets and PayPal integration.
+
+### ⛪ Church Management System
+Comprehensive registration and event management system with QR code ticketing and WhatsApp notifications.
+
+## Professional Experience
+
+### Current: Fullstack Developer at Hyperscal (Aug 2024 - Present)
+- Developed Invoice Automation system
+- Managed migration of millions of records from MySQL and Oracle
+- Contributed to Inventory Management System for warehouse partners
+
+### Fullstack Developer at Alodokter (Apr 2022 - Jul 2024)
+- Led team of 3 developers building online pharmacy platform
+- Optimized system performance achieving 40-50% improvement
+- Integrated Face.js library for real-time face detection
+
+### Fullstack Developer at PT Graha Citra Pratama (Mar 2018 - Apr 2022)
+- Developed HRIS/Payroll system with fingerprint integration
+- Implemented Microsoft Dynamics NAV
+- Created Credit Memo Approval system with API integration
+
+## Education & Certifications
+
+**Bachelor of Computer Science** - Universitas Bina Nusantara (2014-2018)  
+GPA: 3.43
+
+**Certifications:**
+- Certified Ethical Hacker
+- Tokopedia Tech Workshop - Build Scalable APIs with gRPC
+- The Complete Guide to Becoming a Software Architect
+- Google Tag Manager (GTM) Training Course
+
+## Portfolio Setup
+
+This portfolio is built with:
+- **Next.js 14** - React framework for production
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful & consistent icons
+- **Framer Motion** - Production-ready motion library
+
+### Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Project Structure
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+jonathan-portfolio/
+├── pages/
+│   ├── index.js          # Main portfolio page
+│   ├── _app.js           # App configuration
+│   └── _document.js      # Document configuration
+├── public/               # Static assets
+├── styles/               # Global styles
+└── package.json          # Dependencies and scripts
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 🎨 Modern, responsive design
+- 🌙 Dark mode support
+- 📱 Mobile-optimized
+- ⚡ Fast loading with Next.js
+- 🔗 Smooth scrolling navigation
+- 💼 Professional layout
+- 🎯 SEO optimized
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
+I'm always interested in discussing new opportunities, especially in the Blockchain industry.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **GitHub:** [jonathanch96](https://github.com/jonathanch96)
+- **LinkedIn:** [Jonathan Chang](https://www.linkedin.com/in/jonathan-chang-25901910b/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Built with ❤️ using Next.js and Tailwind CSS
