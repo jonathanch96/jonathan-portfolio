@@ -208,23 +208,14 @@ export default function Home() {
       ],
       url: 'https://caterfood.startner.id',
       type: 'CRM Platform',
-      role: 'DevOps & Backend',
+      role: 'DevOps',
     },
     {
       title: 'Startner.id - Digital Marketing Platform',
       role: 'Full-Stack Development & Integration',
       description:
         'Full-stack e-commerce platform for digital marketing products with payment gateway integration and comprehensive admin panel.',
-      tech: [
-        'Laravel',
-        'React.js',
-        'Next.js',
-        'Go',
-        'MySQL',
-        'Docker',
-        'Nginx',
-        'CI/CD',
-      ],
+      tech: ['Laravel', 'MySQL', 'Docker', 'Nginx', 'CI/CD'],
       features: [
         'E-commerce functionality',
         'Payment gateway (Midtrans)',
@@ -240,7 +231,7 @@ export default function Home() {
       role: 'Backend Development & DevOps',
       description:
         'Developed a dedicated dashboard for partners to view and accept incoming project offers, manage ongoing campaigns, and track performance metrics.',
-      tech: ['Go', 'MySQL', 'Docker', 'Next.js', 'CI/CD'],
+      tech: ['Go', 'MySQL', 'Docker', 'Next.js', 'CI/CD', 'React.js'],
       features: [
         'Project offer management',
         'Campaign tracking',
@@ -253,15 +244,15 @@ export default function Home() {
       title: 'Alodokter Online Pharmacy',
       role: 'Full-Stack Development & Integration',
       description:
-        'Led development of complete online pharmacy platform with real-time order management and partner tracking system.',
+        'As PIC, led development of the web version of Alodokter’s pharmacy commerce platform—previously available only on Android and iOS. Integrated real-time order management and partner tracking features.',
       tech: ['Ruby on Rails', 'Polymer JS', 'MongoDB'],
-      features: ['E-commerce platform', 'Real-time notifications'],
+      features: ['E-commerce platform'],
       url: 'https://alodokter.com/aloshop',
       type: 'Healthcare Platform',
     },
     {
       title: 'Partner Order Management Dashboard',
-      role: 'Full-Stack Development & Integration',
+      role: 'Full-Stack Development',
       description:
         'Built an internal dashboard for partners to track, manage, and fulfill incoming pharmacy orders efficiently with role-based access.',
       tech: ['Ruby on Rails', 'Vue.js', 'PostgreSQL'],
