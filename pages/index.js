@@ -312,6 +312,22 @@ export default function Home() {
       url: 'https://snuffle.app',
       type: 'Mobile Platform',
     },
+    {
+      title: 'HRIS System',
+      role: 'Full-Stack Development',
+      description:
+        'Comprehensive Human Resources Information System with fingerprint integration, payroll automation, and complete employee lifecycle management.',
+      tech: ['PHP', 'Laravel', 'MySQL', 'Fingerspot Integration'],
+      features: [
+        'Integrated with fingerspot machine & realtime absence',
+        'Calculate PPh21 & generate pay slips',
+        'Off request, overtime request, etc',
+        'Manage employee document',
+        'Key performance Index management',
+        'Manage upload payroll per division, like SPG admin, manual meal allowance upload, bonus upload',
+      ],
+      type: 'Internal Tool',
+    },
   ]
 
   const currentProjects = [

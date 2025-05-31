@@ -43,6 +43,15 @@ Full-stack e-commerce platform for digital marketing products with comprehensive
 ### 🏥 Online Pharmacy (Alodokter)
 Led development of complete pharmacy platform with real-time order management and face detection validation. Achieved 40-50% performance improvement in cart routing logic.
 
+### 👥 HRIS System
+Comprehensive Human Resources Information System with fingerprint integration, payroll automation, and complete employee lifecycle management. Features include:
+- Integrated with fingerspot machine & realtime absence tracking
+- Calculate PPh21 & generate automated pay slips
+- Off request, overtime request management
+- Employee document management system
+- Key Performance Index (KPI) management
+- Payroll upload management per division (SPG admin, meal allowance, bonus uploads)
+
 ### 🏢 BDA Group - Company Profile
 Multi-page company website with AWS infrastructure setup and automated deployment pipeline.
 
@@ -65,8 +74,12 @@ Comprehensive registration and event management system with QR code ticketing an
 - Integrated Face.js library for real-time face detection
 
 ### Fullstack Developer at PT Graha Citra Pratama (Mar 2018 - Apr 2022)
-- Developed HRIS/Payroll system with fingerprint integration
-- Implemented Microsoft Dynamics NAV
+- Developed comprehensive HRIS/Payroll system with fingerprint integration
+- Built real-time attendance tracking with Fingerspot machine integration
+- Automated PPh21 tax calculations and pay slip generation
+- Created employee document management and KPI tracking systems
+- Implemented payroll upload management for different divisions
+- Integrated Microsoft Dynamics NAV for accounting operations
 - Created Credit Memo Approval system with API integration
 
 ## Education & Certifications
