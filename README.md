@@ -72,7 +72,6 @@ Comprehensive registration and event management system with QR code ticketing an
 ## Education & Certifications
 
 **Bachelor of Computer Science** - Universitas Bina Nusantara (2014-2018)  
-GPA: 3.43
 
 **Certifications:**
 - Certified Ethical Hacker

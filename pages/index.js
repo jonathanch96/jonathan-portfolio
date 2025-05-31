@@ -388,7 +388,7 @@ export default function Home() {
         '@type': 'Person',
         name: 'Jonathan Chang',
       },
-      url: project.url || 'https://jonathan-chang.dev',
+      url: project.url || 'https://jonathanchang.site',
       keywords: project.tech.join(', '),
     })),
   }
@@ -631,9 +631,6 @@ export default function Home() {
                       </h4>
                       <p className="text-slate-600 dark:text-slate-300">
                         Universitas Bina Nusantara (2014-2018)
-                      </p>
-                      <p className="text-slate-600 dark:text-slate-300">
-                        GPA: 3.43
                       </p>
                     </div>
                   </section>

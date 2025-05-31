@@ -1,18 +1,20 @@
 # Robots.txt for Jonathan Chang Portfolio
-# https://jonathan-chang.dev
+# https://jonathanchang.site
+# Last updated: 2024-12-21
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://jonathan-chang.dev/sitemap.xml
+Sitemap: https://jonathanchang.site/sitemap.xml
 
-# Crawl-delay (optional - helps with server load)
+# Crawl-delay (helps with server load)
 Crawl-delay: 1
 
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
@@ -29,7 +31,16 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block common bad bots (optional)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block SEO/scraping bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -37,4 +48,24 @@ User-agent: MJ12bot
 Disallow: /
 
 User-agent: DotBot
-Disallow: / 
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: spbot
+Disallow: /
+
+# Allow images and assets
+User-agent: *
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$ 
