@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   
   // Enable static site generation
+  assetPrefix: './',
   output: 'export',
   trailingSlash: true,
   images: {

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import { useState, useEffect } from 'react'
+import Gallery from '../components/Gallery'
 import {
   Github,
   Linkedin,
@@ -23,9 +23,8 @@ import {
   Zap,
   Building,
   GraduationCap,
+  Camera,
 } from 'lucide-react'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
@@ -62,7 +61,6 @@ export default function Home() {
       'Next.js',
       'Polymer.js',
       'Lit Element',
-      'Vue.js',
       'Nuxt.js',
       'TypeScript',
     ],
@@ -180,7 +178,6 @@ export default function Home() {
         'Implemented Microsoft Dynamics NAV for accounting department',
         'Created Credit Memo Approval system with Accurate Online API',
         'Generated automated PPH21 CSV forms and performance reports',
-        'Installed manual conversion tracking on Google Ads using Google Tag Manager',
       ],
     },
   ]
@@ -244,7 +241,7 @@ export default function Home() {
       title: 'Alodokter Online Pharmacy',
       role: 'Full-Stack Development & Integration',
       description:
-        'As PIC, led development of the web version of Alodokter’s pharmacy commerce platform—previously available only on Android and iOS. Integrated real-time order management and partner tracking features.',
+        "As PIC, led development of the web version of Alodokter's pharmacy commerce platform - previously available only on Android and iOS. Integrated real-time order management and partner tracking features.",
       tech: ['Ruby on Rails', 'Polymer JS', 'MongoDB'],
       features: ['E-commerce platform'],
       url: 'https://alodokter.com/aloshop',
@@ -255,7 +252,7 @@ export default function Home() {
       role: 'Full-Stack Development',
       description:
         'Built an internal dashboard for partners to track, manage, and fulfill incoming pharmacy orders efficiently with role-based access.',
-      tech: ['Ruby on Rails', 'Vue.js', 'PostgreSQL'],
+      tech: ['Ruby on Rails', 'PostgreSQL'],
       features: [
         'Order tracking and filtering',
         'Role-based access control',
@@ -265,7 +262,7 @@ export default function Home() {
     },
     {
       title: 'Insurance Management Dashboard',
-      role: 'Full-Stack Development & Integration',
+      role: 'Frontend & Integration',
       description:
         'Admin dashboard for insurance company partners to manage employees, registrations, and claims with face detection validation.',
       tech: ['Ruby on Rails', 'Polymer JS', 'VIDA', 'Face Detection'],
@@ -276,7 +273,6 @@ export default function Home() {
         'Document validation',
       ],
       type: 'Internal Tool',
-      role: 'Frontend & Integration',
     },
     {
       title: 'BDA Group - Company Profile',
@@ -352,6 +348,26 @@ export default function Home() {
     },
   ]
 
+  // Sample gallery data - you can add more images here
+  const galleryImages = [
+    {
+      src: './jonathan-chang-photo.jpg',
+      alt: 'Jonathan Chang - Professional Photo',
+      caption: 'Jonathan Chang - Software Engineer',
+    },
+    // Add more images here in the future
+    {
+      src: '/project-screenshot-1.jpg',
+      alt: 'Project Screenshot 1',
+      caption: 'Online Pharmacy Platform Dashboard',
+    },
+    {
+      src: '/project-screenshot-2.jpg',
+      alt: 'Project Screenshot 2',
+      caption: 'E-commerce Admin Panel',
+    },
+  ]
+
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId)
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
@@ -400,7 +416,7 @@ export default function Home() {
       </Head>
 
       <div
-        className={`min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 ${inter.className}`}
+        className={`min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800`}
       >
         {/* Skip to main content for accessibility */}
         <a
@@ -433,6 +449,7 @@ export default function Home() {
                   { id: 'about', label: 'About', icon: User },
                   { id: 'experience', label: 'Experience', icon: Briefcase },
                   { id: 'projects', label: 'Projects', icon: FolderOpen },
+                  { id: 'gallery', label: 'Gallery', icon: Camera },
                   { id: 'contact', label: 'Contact', icon: Phone },
                 ].map((section) => {
                   const Icon = section.icon
@@ -472,7 +489,7 @@ export default function Home() {
                 <div className="mb-8">
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700">
                     <Image
-                      src="/jonathan-chang-photo.jpg"
+                      src="./jonathan-chang-photo.jpg"
                       alt="Jonathan Chang - Software Engineer"
                       width={128}
                       height={128}
@@ -996,6 +1013,38 @@ export default function Home() {
               </section>
             </div>
           </section>
+
+          {/* Gallery Section */}
+          {galleryImages.length > 0 && false && (
+            <section
+              id="gallery"
+              className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800"
+              aria-labelledby="gallery-heading"
+            >
+              <div className="max-w-7xl mx-auto">
+                <header className="text-center mb-16">
+                  <h2
+                    id="gallery-heading"
+                    className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
+                  >
+                    Gallery
+                  </h2>
+                  <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                    A collection of photos and project screenshots. Click on any
+                    image to view it in full size.
+                  </p>
+                </header>
+
+                <div className="max-w-4xl mx-auto">
+                  <Gallery
+                    images={galleryImages}
+                    title="Example of my work"
+                    columns={3}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* Contact Section */}
           <section
