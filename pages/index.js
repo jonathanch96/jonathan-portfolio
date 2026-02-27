@@ -234,6 +234,22 @@ export default function Home() {
       role: 'Tech Lead',
     },
     {
+      title: 'Learning Management System',
+      description:
+        'Comprehensive school management system for student registration, curriculum management, classroom organization, and administrative tasks. Includes building management, transportation coordination, and integrated payroll system.',
+      tech: ['React', 'Next.js'],
+      features: [
+        'Student registration and management',
+        'Curriculum management',
+        'Classroom organization',
+        'Building management',
+        'Transportation coordination',
+        'Payroll system',
+      ],
+      type: 'Education Platform',
+      role: 'Frontend Development',
+    },
+    {
       title: 'CaterFood - Catering CRM Platform',
       description:
         'CRM system for catering companies to manage customers, orders, and daily meal adjustments. Handled complete DevOps implementation including deployment and CI/CD pipeline.',
@@ -363,6 +379,22 @@ export default function Home() {
       type: 'Mobile Platform',
     },
     {
+      title: 'Learning Management System',
+      description:
+        'Comprehensive school management system for student registration, curriculum management, classroom organization, and administrative tasks. Includes building management, transportation coordination, and integrated payroll system.',
+      tech: ['React', 'Next.js'],
+      features: [
+        'Student registration and management',
+        'Curriculum management',
+        'Classroom organization',
+        'Building management',
+        'Transportation coordination',
+        'Payroll system',
+      ],
+      type: 'Education Platform',
+      role: 'Frontend Development',
+    },
+    {
       title: 'HRIS System',
       role: 'Full-Stack Development',
       description:
@@ -382,20 +414,20 @@ export default function Home() {
 
   const currentProjects = [
     {
-      title: 'Learning Management System',
+      title: 'BDA Group - Multi-Language & Article Module Enhancement',
       description:
-        'School management system for student registration, curriculum management, classroom organization, and administrative tasks.',
-      tech: ['React'],
+        'Enhancing the existing BDA Group company website with multi-language support and article management system. Adding internationalization (i18n) capabilities and a comprehensive content management module for publishing company news and articles.',
+      tech: ['Laravel', 'React', 'i18n', 'MySQL', 'AWS'],
       features: [
-        'Student registration',
-        'Curriculum management',
-        'Classroom organization',
-        'Building management',
-        'Transportation',
-        'Payroll system',
+        'Multi-language support (i18n)',
+        'Article management module',
+        'Content publishing system',
+        'Language switcher',
+        'SEO optimization for multiple languages',
+        'Admin panel for content management',
       ],
       status: 'In Progress',
-      role: 'Frontend Development',
+      role: 'Full-Stack Development',
     },
   ]
 
@@ -648,7 +680,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <article>
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    With over 6 years of experience in software engineering and
+                    With over 7 years of experience in software engineering and
                     full-stack development, I specialize in building scalable
                     web applications across healthcare, finance, logistics, and
                     telecommunications industries. I have a proven track record
@@ -780,7 +812,7 @@ export default function Home() {
                   Professional Experience
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300">
-                  Over 6 years of building scalable applications across multiple
+                  Over 7 years of building scalable applications across multiple
                   industries
                 </p>
               </header>
