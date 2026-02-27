@@ -109,28 +109,29 @@ export default function Home() {
   const experiences = [
     {
       company: 'Hyperscal, PT SOD TECHNOLOGY INDONESIA',
-      position: 'Software Engineer',
+      position: 'Tech Lead - Ticketing System & Workforce Management',
       period: 'August 2024 - Present',
       location: 'Jakarta, Indonesia',
       description:
-        'Software Engineer responsible for gathering user requirements from Philippines telco clients and providing technical solutions. Currently working on warehouse management system and upcoming BSS/billing system for Philippines telco company.',
+        'Leading development of Ticketing System and Workforce Management platform for Philippines telco company. Managing a team of 15+ developers and reporting directly to CTO and COO. Previously worked on warehouse management and BSS/billing systems.',
       tech: [
-        'Laravel',
-        'MariaDB',
-        'Oracle',
-        'Docker',
         'Go',
+        'PostgreSQL',
+        'OpenSearch',
+        'AWS ECS',
+        'CodePipeline',
+        'WebSocket',
+        'Google Maps API',
         'React',
-        'Power Builder',
-        'Horizon',
-        'Redis',
+        'Docker',
+        'Laravel',
+        'Oracle',
       ],
       achievements: [
-        'Gathering user requirements from Philippines telco clients and providing technical solutions',
+        'Leading team of 15+ developers on Ticketing System and Workforce Management since August 2025',
+        'Reporting directly to CTO and COO for project delivery and strategic planning',
         'Successfully migrated millions of records from MySQL and Oracle with zero data loss',
-        'Currently developing Inventory Management System for warehouse partners (ongoing)',
-        'Leading development of new BSS/billing system end-to-end for Philippines telco company (upcoming)',
-        'Enhanced warehouse fulfillment efficiency and traceability',
+        'Developed and deployed Inventory Management System for warehouse partners',
       ],
     },
     {
@@ -183,6 +184,55 @@ export default function Home() {
   ]
 
   const projects = [
+    {
+      title: 'Ticketing System - Telco Customer Service Platform',
+      description:
+        'Enterprise ticketing system for Philippines telco company to manage customer complaints and service requests. Built multi-channel ticket creation supporting email-to-ticket conversion, IVR integration with Amazon Connect (TCCC) for call recording, and chatbot-to-agent escalation. Implemented mass issue management with automated ticket creation for affected customers and comprehensive SLA breach monitoring with reporting.',
+      tech: [
+        'Go',
+        'PostgreSQL',
+        'OpenSearch',
+        'AWS ECS',
+        'CodePipeline',
+        'TCCC (Tencent Cloud Contact Center)',
+        'React',
+        'Docker',
+      ],
+      features: [
+        'Multi-channel ticket creation (Email, IVR, Chatbot)',
+        'IVR integration with call recording (TCCC)',
+        'Mass issue handling with automated notifications',
+        'SLA breach monitoring and reporting',
+        'Real-time ticket tracking and management',
+        'Agent dashboard with chatbot integration',
+      ],
+      type: 'Telco Platform',
+      role: 'Tech Lead',
+    },
+    {
+      title: 'Workforce Management (WFM) - Field Service Platform',
+      description:
+        'Workforce management system for telco field operations, handling work order dispatch and lineman deployment to customer locations. Implemented real-time order tracking using Google Maps API for route optimization and WebSocket for live updates. Enables efficient management of field technicians and service delivery tracking.',
+      tech: [
+        'Go',
+        'PostgreSQL',
+        'Google Maps API',
+        'WebSocket',
+        'AWS ECS',
+        'React',
+        'Docker',
+      ],
+      features: [
+        'Work order dispatch system',
+        'Real-time order tracking with Google Maps',
+        'Lineman deployment management',
+        'Route optimization',
+        'Live status updates via WebSocket',
+        'Field service analytics',
+      ],
+      type: 'Telco Platform',
+      role: 'Tech Lead',
+    },
     {
       title: 'CaterFood - Catering CRM Platform',
       description:
@@ -346,21 +396,6 @@ export default function Home() {
       ],
       status: 'In Progress',
       role: 'Frontend Development',
-    },
-    {
-      title: 'Trip Manager Expense (Concept)',
-      description:
-        'Expense management system for group trips with AI integration and social media connectivity to improve user experience.',
-      tech: ['Go', 'React', 'LLM Integration', 'Social Media APIs'],
-      features: [
-        'Expense tracking',
-        'Bill splitting',
-        'LLM integration',
-        'Social media connectivity',
-        'Trip collaboration',
-      ],
-      status: 'Planning Phase',
-      role: 'Full-Stack Development',
     },
   ]
 
