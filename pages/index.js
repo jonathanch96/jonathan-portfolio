@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import Gallery from '../components/Gallery'
 import {
   Github,
   Linkedin,
@@ -20,10 +19,7 @@ import {
   FolderOpen,
   Phone,
   Star,
-  Zap,
-  Building,
   GraduationCap,
-  Camera,
 } from 'lucide-react'
 
 export default function Home() {
@@ -55,6 +51,7 @@ export default function Home() {
       'Go (Golang)',
       'Node.js',
       'Express.js',
+      'Gin',
     ],
     frontend: [
       'React.js',
@@ -63,6 +60,7 @@ export default function Home() {
       'Lit Element',
       'Nuxt.js',
       'TypeScript',
+      'Tailwind CSS',
     ],
     database: [
       'MySQL',
@@ -84,17 +82,14 @@ export default function Home() {
       'AWS',
       'Datadog',
       'ELK Stack',
+      'Kafka',
+      'OpenSearch',
     ],
     tools: [
       'Git',
       'Portainer',
       'Twilio',
-      'PayPal API',
-      'Midtrans',
       'Jasper Reports',
-      'GTM',
-      'Power Builder',
-      'Laravel Horizon',
     ],
   }
 
@@ -109,11 +104,11 @@ export default function Home() {
   const experiences = [
     {
       company: 'Hyperscal, PT SOD TECHNOLOGY INDONESIA',
-      position: 'Tech Lead - Ticketing System & Workforce Management',
-      period: 'August 2024 - Present',
+      position: 'Tech Lead',
+      period: 'August 2025 - Present',
       location: 'Jakarta, Indonesia',
       description:
-        'Leading development of Ticketing System and Workforce Management platform for Philippines telco company. Managing a team of 15+ developers and reporting directly to CTO and COO. Previously worked on warehouse management and BSS/billing systems.',
+        'Leading a cross-functional team building ticketing and workforce management platforms for a telecommunications client in the Philippines, from architecture and planning through production delivery.',
       tech: [
         'Go',
         'PostgreSQL',
@@ -124,14 +119,33 @@ export default function Home() {
         'Google Maps API',
         'React',
         'Docker',
+        'Redis',
+        'Kafka',
         'Laravel',
         'Oracle',
       ],
       achievements: [
-        'Leading team of 15+ developers on Ticketing System and Workforce Management since August 2025',
-        'Reporting directly to CTO and COO for project delivery and strategic planning',
-        'Successfully migrated millions of records from MySQL and Oracle with zero data loss',
-        'Developed and deployed Inventory Management System for warehouse partners',
+        'Lead a cross-functional engineering team of 15+ engineers',
+        'Collaborate directly with the CTO and COO on technical priorities, delivery plans, and engineering roadmaps',
+        'Drive architecture, technical design, task breakdown, code reviews, release planning, and engineering standards',
+        'Lead incident investigation, root-cause analysis, performance optimization, and long-term corrective actions',
+        'Mentor engineers and translate business requirements into executable technical plans',
+      ],
+    },
+    {
+      company: 'Hyperscal, PT SOD TECHNOLOGY INDONESIA',
+      position: 'Fullstack Developer',
+      period: 'August 2024 - July 2025',
+      location: 'Jakarta, Indonesia',
+      description:
+        'Built and optimized billing, payment posting, data migration, and warehouse workflows for high-volume telecommunications operations.',
+      tech: ['Laravel', 'MariaDB', 'Oracle', 'Docker'],
+      achievements: [
+        'Reduced invoice automation processing from 24-48 hours to 2-3 hours',
+        'Migrated millions of MySQL and Oracle records with zero downtime and full data integrity',
+        'Reduced a major processing workflow from about 48 hours to 20-24 hours through parallel jobs and query optimization',
+        'Built a payment posting module processing 1.5M+ monthly GCash transactions',
+        'Implemented picking, packing, shipping, and material-request modules for a warehouse inventory system',
       ],
     },
     {
@@ -140,7 +154,7 @@ export default function Home() {
       period: 'April 2022 - July 2024',
       location: 'Jakarta, Indonesia',
       description:
-        'Led a team of 3 developers to build online pharmacy platform and insurance management dashboard. Optimized cart routing logic achieving 40-50% performance improvement.',
+        'Led a team of 3 developers building Alodokter\'s online pharmacy platform and partner operations tooling for one of Indonesia\'s largest health platforms.',
       tech: [
         'Ruby on Rails',
         'Polymer JS',
@@ -148,14 +162,14 @@ export default function Home() {
         'Datadog',
         'Elastic Search',
         'MongoDB',
-        'VIDA',
+        'Face.js',
       ],
       achievements: [
-        'Led team of 3 developers in building complete online pharmacy platform',
-        'Achieved 40-50% performance improvement in cart routing logic',
+        'Led 3 fullstack developers building an online pharmacy experience on a platform with 28M+ monthly visits',
+        'Reduced cart routing processing time by 40-50%',
         'Built order tracking system for partner pharmacies to manage order lifecycle',
         'Developed insurance dashboard for admin management with employee registration and claims',
-        'Integrated VIDA face detection for registration validation on frontend',
+        'Integrated Face.js for real-time face detection validation',
         'Built real-time order management dashboard for pharmacy partners',
       ],
     },
@@ -165,20 +179,22 @@ export default function Home() {
       period: 'March 2018 - April 2022',
       location: 'Jakarta, Indonesia',
       description:
-        'Developed HRIS/Payroll system with fingerprint integration, implemented Microsoft Dynamics NAV, and created Credit Memo Approval system with Accurate Online API integration.',
+        'Built internal HR, payroll, accounting, approval, reporting, and infrastructure systems supporting day-to-day business operations.',
       tech: [
         'PHP',
         'Laravel',
         'Java',
         'MySQL',
         'SQL Server',
+        'SQL Server Reporting Services',
+        'Jasper Reports',
         'Microsoft Dynamics NAV',
       ],
       achievements: [
-        'Built comprehensive HRIS/Payroll system with fingerprint integration',
+        'Built an HRIS/Payroll system with fingerprint integration and PPh21 export used by 200+ employees',
         'Implemented Microsoft Dynamics NAV for accounting department',
         'Created Credit Memo Approval system with Accurate Online API',
-        'Generated automated PPH21 CSV forms and performance reports',
+        'Set up secure mail and server infrastructure across departments',
       ],
     },
   ]
@@ -234,20 +250,64 @@ export default function Home() {
       role: 'Tech Lead',
     },
     {
+      title: 'Snuffle - Dog Walking & AI Platform',
+      description:
+        'Enhanced a dog-walking platform with real-time services, payments, AI-powered support, and image classification.',
+      tech: [
+        'Laravel',
+        'PHP',
+        'WebSockets',
+        'PayPal API',
+        'OpenAI API',
+        'Machine Learning',
+      ],
+      role: 'Backend Developer',
+      features: [
+        'Real-time walk location tracking',
+        'Voucher and promotion management',
+        'PayPal mobile payment integration',
+        'Retrieval-Augmented Generation support chatbot',
+        'AI dog breed recognition and model deployment',
+      ],
+      url: 'https://snuffle.app',
+      type: 'Consumer Platform',
+    },
+    {
+      title: 'Church Registration & Event Systems',
+      description:
+        'Built community operations systems covering registrations, assignments, follow-up reporting, event ticketing, and flexible forms.',
+      tech: [
+        'Laravel',
+        'React',
+        'Java',
+        'PostgreSQL',
+        'Twilio',
+        'TypeScript',
+      ],
+      features: [
+        'Registration assignment and follow-up reporting',
+        'QR-code event check-in via Android',
+        'WhatsApp notifications through Twilio',
+        'Flexible forms integrated with a church API',
+      ],
+      type: 'Community Platform',
+      role: 'Full-Stack Developer',
+    },
+    {
       title: 'Learning Management System',
       description:
-        'Comprehensive school management system for student registration, curriculum management, classroom organization, and administrative tasks. Includes building management, transportation coordination, and integrated payroll system.',
-      tech: ['React', 'Next.js'],
+        'Modular school management platform covering academic operations, administration, access control, and detailed system configuration.',
+      tech: ['React', 'Laravel', 'PostgreSQL', 'Tailwind CSS', 'Node.js'],
       features: [
-        'Student registration and management',
-        'Curriculum management',
-        'Classroom organization',
-        'Building management',
-        'Transportation coordination',
-        'Payroll system',
+        'School creation and class assignment',
+        'Student and staff management',
+        'Exam and grading modules',
+        'Fee management',
+        'Homeroom teacher settings',
+        'Role-based administration',
       ],
       type: 'Education Platform',
-      role: 'Frontend Development',
+      role: 'Full-Stack Developer',
     },
     {
       title: 'CaterFood - Catering CRM Platform',
@@ -331,7 +391,7 @@ export default function Home() {
       role: 'Frontend & Integration',
       description:
         'Admin dashboard for insurance company partners to manage employees, registrations, and claims with face detection validation.',
-      tech: ['Ruby on Rails', 'Polymer JS', 'VIDA', 'Face Detection'],
+      tech: ['Ruby on Rails', 'Polymer JS', 'Face.js', 'Face Detection'],
       features: [
         'Employee registration with face detection',
         'Claims management',
@@ -364,37 +424,6 @@ export default function Home() {
       type: 'Company Website',
     },
     {
-      title: 'Snuffle - Dog Walking Platform',
-      description:
-        'Enhanced dog walking platform with real-time features and payment integration.',
-      tech: ['Laravel', 'PHP', 'WebSockets', 'PayPal API'],
-      role: 'Backend Development',
-      features: [
-        'Voucher management',
-        'Real-time location tracking',
-        'PayPal integration',
-        'Mobile-first design',
-      ],
-      url: 'https://snuffle.app',
-      type: 'Mobile Platform',
-    },
-    {
-      title: 'Learning Management System',
-      description:
-        'Comprehensive school management system for student registration, curriculum management, classroom organization, and administrative tasks. Includes building management, transportation coordination, and integrated payroll system.',
-      tech: ['React', 'Next.js'],
-      features: [
-        'Student registration and management',
-        'Curriculum management',
-        'Classroom organization',
-        'Building management',
-        'Transportation coordination',
-        'Payroll system',
-      ],
-      type: 'Education Platform',
-      role: 'Frontend Development',
-    },
-    {
       title: 'HRIS System',
       role: 'Full-Stack Development',
       description:
@@ -409,45 +438,6 @@ export default function Home() {
         'Manage upload payroll per division, like SPG admin, manual meal allowance upload, bonus upload',
       ],
       type: 'Internal Tool',
-    },
-  ]
-
-  const currentProjects = [
-    {
-      title: 'BDA Group - Multi-Language & Article Module Enhancement',
-      description:
-        'Enhancing the existing BDA Group company website with multi-language support and article management system. Adding internationalization (i18n) capabilities and a comprehensive content management module for publishing company news and articles.',
-      tech: ['Laravel', 'React', 'i18n', 'MySQL', 'AWS'],
-      features: [
-        'Multi-language support (i18n)',
-        'Article management module',
-        'Content publishing system',
-        'Language switcher',
-        'SEO optimization for multiple languages',
-        'Admin panel for content management',
-      ],
-      status: 'In Progress',
-      role: 'Full-Stack Development',
-    },
-  ]
-
-  // Sample gallery data - you can add more images here
-  const galleryImages = [
-    {
-      src: './jonathan-chang-photo.jpg',
-      alt: 'Jonathan Chang - Professional Photo',
-      caption: 'Jonathan Chang - Software Engineer',
-    },
-    // Add more images here in the future
-    {
-      src: '/project-screenshot-1.jpg',
-      alt: 'Project Screenshot 1',
-      caption: 'Online Pharmacy Platform Dashboard',
-    },
-    {
-      src: '/project-screenshot-2.jpg',
-      alt: 'Project Screenshot 2',
-      caption: 'E-commerce Admin Panel',
     },
   ]
 
@@ -480,12 +470,12 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Jonathan Chang - Software Engineer & Full-Stack Developer | Jakarta,
+          Jonathan Chang - Tech Lead & Software Engineer | Jakarta,
           Indonesia
         </title>
         <meta
           name="description"
-          content="Experienced Software Engineer with 6+ years expertise in Go, Ruby on Rails, Laravel, React, Next.js. Specialized in healthcare, fintech, telco solutions. Available for blockchain opportunities."
+          content="Tech Lead and Software Engineer with 8+ years of experience leading teams and building scalable systems across telecommunications, healthcare, finance, logistics, ERP, and e-commerce."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -532,7 +522,6 @@ export default function Home() {
                   { id: 'about', label: 'About', icon: User },
                   { id: 'experience', label: 'Experience', icon: Briefcase },
                   { id: 'projects', label: 'Projects', icon: FolderOpen },
-                  { id: 'gallery', label: 'Gallery', icon: Camera },
                   { id: 'contact', label: 'Contact', icon: Phone },
                 ].map((section) => {
                   const Icon = section.icon
@@ -588,14 +577,13 @@ export default function Home() {
                   Jonathan Chang
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8">
-                  Software Engineer & Full-Stack Developer
+                  Tech Lead & Software Engineer
                 </p>
                 <p className="text-lg text-slate-500 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
-                  Experienced Software Engineer with 6+ years of expertise in
-                  backend (Golang, Ruby on Rails, Laravel) and frontend (React,
-                  Next.js) technologies. Specialized in building scalable
-                  applications with modern DevOps practices and client
-                  requirement analysis.
+                  8+ years building scalable systems across telecommunications,
+                  healthcare, finance, logistics, ERP, and e-commerce. I lead
+                  engineering teams and take production systems from technical
+                  architecture through deployment and operations.
                 </p>
                 <address className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 not-italic">
                   <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
@@ -680,21 +668,17 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <article>
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    With over 7 years of experience in software engineering and
-                    full-stack development, I specialize in building scalable
-                    web applications across healthcare, finance, logistics, and
-                    telecommunications industries. I have a proven track record
-                    of leading development teams, gathering user requirements,
-                    and delivering complex projects from conception to
-                    production.
+                    With 8+ years in software engineering, I combine hands-on
+                    backend and full-stack development with technical leadership.
+                    My work spans healthcare, finance, logistics, ERP,
+                    e-commerce, and telecommunications.
                   </p>
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    Currently working as a Software Engineer at Hyperscal,
-                    gathering requirements from Philippines telco clients and
-                    providing technical solutions. I&apos;m also exploring
-                    opportunities in the Blockchain industry to apply my skills
-                    in emerging technologies while continuing to grow my
-                    expertise in modern development practices.
+                    As Tech Lead at Hyperscal, I guide 15+ engineers building
+                    ticketing and workforce management platforms for a Philippine
+                    telecommunications client. I drive architecture, delivery
+                    planning, code quality, production reliability, and engineer
+                    mentoring in partnership with executive leadership.
                   </p>
 
                   <section className="mb-6">
@@ -713,7 +697,7 @@ export default function Home() {
                         Bachelor of Computer Science
                       </h4>
                       <p className="text-slate-600 dark:text-slate-300">
-                        Universitas Bina Nusantara (2014-2018)
+                        Universitas Bina Nusantara (2014-2018) - GPA 3.43
                       </p>
                     </div>
                   </section>
@@ -812,7 +796,7 @@ export default function Home() {
                   Professional Experience
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300">
-                  Over 7 years of building scalable applications across multiple
+                  Over 8 years of building scalable systems across multiple
                   industries
                 </p>
               </header>
@@ -996,135 +980,8 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Current Projects Section */}
-              <section
-                className="mb-8"
-                aria-labelledby="current-projects-heading"
-              >
-                <header className="flex items-center gap-2 mb-8">
-                  <Zap
-                    className="text-yellow-600 dark:text-yellow-400"
-                    size={24}
-                    aria-hidden="true"
-                  />
-                  <h3
-                    id="current-projects-heading"
-                    className="text-3xl font-bold text-slate-800 dark:text-white"
-                  >
-                    Current Projects
-                  </h3>
-                </header>
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {currentProjects.map((project, index) => (
-                    <article
-                      key={index}
-                      className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-slate-700 dark:to-slate-600 rounded-lg p-8 border-l-4 border-yellow-500"
-                    >
-                      <header className="flex justify-between items-start mb-4">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <span
-                              className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
-                                project.status === 'In Progress'
-                                  ? 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
-                                  : 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
-                              }`}
-                            >
-                              {project.status}
-                            </span>
-                          </div>
-                          <h4 className="text-2xl font-bold text-slate-800 dark:text-white">
-                            {project.title}
-                          </h4>
-                          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                            Role: {project.role}
-                          </p>
-                        </div>
-                      </header>
-
-                      <p className="text-slate-600 dark:text-slate-300 mb-6">
-                        {project.description}
-                      </p>
-
-                      <section className="mb-6">
-                        <h5 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">
-                          Key Features
-                        </h5>
-                        <ul className="space-y-1">
-                          {project.features.map((feature, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center gap-2 text-slate-600 dark:text-slate-300"
-                            >
-                              <ChevronRight
-                                size={14}
-                                className="text-yellow-600 dark:text-yellow-400"
-                                aria-hidden="true"
-                              />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </section>
-
-                      <section>
-                        <h5 className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">
-                          Tech Stack
-                        </h5>
-                        <div
-                          className="flex flex-wrap gap-2"
-                          role="list"
-                          aria-label="Project technologies"
-                        >
-                          {project.tech.map((tech) => (
-                            <span
-                              key={tech}
-                              role="listitem"
-                              className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-sm"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </section>
-                    </article>
-                  ))}
-                </div>
-              </section>
             </div>
           </section>
-
-          {/* Gallery Section */}
-          {galleryImages.length > 0 && false && (
-            <section
-              id="gallery"
-              className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800"
-              aria-labelledby="gallery-heading"
-            >
-              <div className="max-w-7xl mx-auto">
-                <header className="text-center mb-16">
-                  <h2
-                    id="gallery-heading"
-                    className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
-                  >
-                    Gallery
-                  </h2>
-                  <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                    A collection of photos and project screenshots. Click on any
-                    image to view it in full size.
-                  </p>
-                </header>
-
-                <div className="max-w-4xl mx-auto">
-                  <Gallery
-                    images={galleryImages}
-                    title="Example of my work"
-                    columns={3}
-                  />
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* Contact Section */}
           <section
@@ -1140,9 +997,9 @@ export default function Home() {
                 Let&apos;s Connect
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                I&apos;m always interested in discussing new opportunities,
-                especially in the Blockchain industry. Let&apos;s talk about how
-                we can work together!
+                I&apos;m open to engineering leadership, software development, and
+                consulting opportunities. Let&apos;s talk about the systems and
+                teams you&apos;re building.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <a
@@ -1195,7 +1052,8 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-slate-300">
-              © 2024 Jonathan Chang. Built with Next.js and Tailwind CSS.
+              © {new Date().getFullYear()} Jonathan Chang. Built with Next.js and
+              Tailwind CSS.
             </p>
           </div>
         </footer>
