@@ -1000,6 +1000,83 @@ export default function Home() {
                 ))}
               </div>
 
+              <section aria-labelledby="current-projects-heading">
+                <header className="flex items-center gap-3 mb-8">
+                  <Zap className="text-yellow-500" size={28} aria-hidden="true" />
+                  <div>
+                    <h3
+                      id="current-projects-heading"
+                      className="text-3xl font-bold text-slate-800 dark:text-white"
+                    >
+                      Current Project
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 mt-1">
+                      What I&apos;m currently building
+                    </p>
+                  </div>
+                </header>
+
+                {currentProjects.map((project) => (
+                  <article
+                    key={project.title}
+                    className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-slate-700 dark:to-slate-600 rounded-lg p-8 border-l-4 border-yellow-500"
+                  >
+                    <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+                      <div>
+                        <span className="inline-block px-3 py-1 mb-3 rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-sm font-medium">
+                          {project.status}
+                        </span>
+                        <h4 className="text-2xl font-bold text-slate-800 dark:text-white">
+                          {project.title}
+                        </h4>
+                        <p className="text-sm text-slate-500 dark:text-slate-300 mt-1">
+                          Role: {project.role}
+                        </p>
+                      </div>
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
+                        aria-label={`Visit ${project.title} (opens in new tab)`}
+                      >
+                        Visit Niibu
+                        <ExternalLink size={18} aria-hidden="true" />
+                      </a>
+                    </header>
+
+                    <p className="text-slate-600 dark:text-slate-200 mb-5">
+                      {project.description}
+                    </p>
+                    <ul className="space-y-2 mb-5">
+                      {project.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2 text-slate-600 dark:text-slate-200"
+                        >
+                          <ChevronRight
+                            size={16}
+                            className="text-yellow-600 dark:text-yellow-400 mt-0.5 flex-shrink-0"
+                            aria-hidden="true"
+                          />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </section>
+
             </div>
           </section>
 
