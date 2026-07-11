@@ -19,6 +19,7 @@ import {
   FolderOpen,
   Phone,
   Star,
+  Zap,
   GraduationCap,
 } from 'lucide-react'
 
@@ -404,7 +405,7 @@ export default function Home() {
       title: 'BDA Group - Company Profile',
       role: 'Full-Stack Development & DevOps',
       description:
-        'Multi-page company website with AWS infrastructure setup and automated deployment pipeline.',
+        'Multi-language company website and product catalog with article management, AWS infrastructure, and an automated deployment pipeline.',
       tech: [
         'Laravel',
         'React',
@@ -413,12 +414,15 @@ export default function Home() {
         'CloudFront',
         'EC2',
         'CI/CD',
+        'i18n',
       ],
       features: [
         'Company catalog',
         'AWS infrastructure',
         'Automated deployment',
         'Content management',
+        'Multi-language support',
+        'Article publishing module',
       ],
       url: 'https://bdagroup.co.id',
       type: 'Company Website',
@@ -438,6 +442,22 @@ export default function Home() {
         'Manage upload payroll per division, like SPG admin, manual meal allowance upload, bonus upload',
       ],
       type: 'Internal Tool',
+    },
+  ]
+
+  const currentProjects = [
+    {
+      title: 'Niibu - Beauty Creator & Event Platform',
+      description:
+        'Backend development for an ongoing beauty platform featuring creator discovery and event experiences.',
+      tech: ['Backend Engineering'],
+      features: [
+        'TikTok-style creator pages for beauty creators',
+        'Eventbrite-style event discovery and event pages',
+      ],
+      url: 'http://niibu.com/',
+      status: 'Ongoing',
+      role: 'Backend Developer',
     },
   ]
 
