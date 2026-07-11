@@ -1,12 +1,12 @@
 # Robots.txt for Jonathan Chang Portfolio
-# https://jonathanchang.site
+# https://jonathanchang.my.id
 # Last updated: 2024-12-21
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://jonathanchang.site/sitemap.xml
+Sitemap: https://jonathanchang.my.id/sitemap.xml
 
 # Crawl-delay (helps with server load)
 Crawl-delay: 1

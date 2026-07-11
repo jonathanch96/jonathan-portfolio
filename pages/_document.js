@@ -41,7 +41,7 @@ export default function Document() {
 
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jonathanchang.site/" />
+        <meta property="og:url" content="https://jonathanchang.my.id/" />
         <meta
           property="og:title"
           content="Jonathan Chang - Software Engineer & Full-Stack Developer"
@@ -52,7 +52,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://jonathanchang.site/og-image.jpg"
+          content="https://jonathanchang.my.id/og-image.jpg"
         />
         <meta
           property="og:image:alt"
@@ -65,7 +65,7 @@ export default function Document() {
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://jonathanchang.site/" />
+        <meta name="twitter:url" content="https://jonathanchang.my.id/" />
         <meta
           name="twitter:title"
           content="Jonathan Chang - Software Engineer & Full-Stack Developer"
@@ -76,7 +76,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://jonathanchang.site/og-image.jpg"
+          content="https://jonathanchang.my.id/og-image.jpg"
         />
         <meta
           name="twitter:image:alt"
@@ -85,7 +85,7 @@ export default function Document() {
         <meta name="twitter:creator" content="@jonathanch96" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://jonathanchang.site/" />
+        <link rel="canonical" href="https://jonathanchang.my.id/" />
 
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" />
@@ -134,9 +134,9 @@ export default function Document() {
               jobTitle: 'Software Engineer',
               description:
                 'Experienced Software Engineer with 6+ years expertise in full-stack development',
-              url: 'https://jonathanchang.site',
+              url: 'https://jonathanchang.my.id',
               email: 'jonathanchang96@gmail.com',
-              image: 'https://jonathanchang.site/jonathan-chang-photo.jpg',
+              image: 'https://jonathanchang.my.id/jonathan-chang-photo.jpg',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Jakarta',
@@ -182,7 +182,7 @@ export default function Document() {
               name: 'Jonathan Chang Portfolio',
               description:
                 'Portfolio website of Jonathan Chang, Software Engineer and Full-Stack Developer',
-              url: 'https://jonathanchang.site',
+              url: 'https://jonathanchang.my.id',
               author: {
                 '@type': 'Person',
                 name: 'Jonathan Chang',

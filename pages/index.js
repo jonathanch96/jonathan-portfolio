@@ -471,7 +471,7 @@ export default function Home() {
         '@type': 'Person',
         name: 'Jonathan Chang',
       },
-      url: project.url || 'https://jonathanchang.site',
+      url: project.url || 'https://jonathanchang.my.id',
       keywords: project.tech.join(', '),
     })),
   }
